@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peduli Aceh & Sumatera | Farmasi 2025 UIM</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💊</text></svg>">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%);
+      color: #2c3e50; line-height: 1.6;
+    }
+    .container {
+      max-width: 650px; margin: 20px auto; padding: 0 15px;
+    }
+    header {
+      text-align: center; padding: 30px 20px;
+      background: white; border-radius: 16px; margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .logo {
+      font-size: 2.4rem; margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 1.8rem; color: #e74c3c; margin: 10px 0;
+    }
+    .subtitle {
+      color: #7f8c8d; font-size: 1.1rem;
+    }
+    .stats {
+      display: flex; justify-content: center; gap: 30px;
+      margin: 20px 0; flex-wrap: wrap;
+    }
+    .stat-box {
+      background: #f8f9fa; padding: 12px 20px;
+      border-radius: 10px; text-align: center;
+      min-width: 140px;
+      border: 1px solid #e9ecef;
+    }
+    .stat-value {
+      font-size: 1.5rem; font-weight: bold; color: #27ae60;
+      margin: 5px 0;
+    }
+    .stat-label {
+      font-size: 0.9rem; color: #7f8c8d;
+    }
+
+    .card {
+      background: white; border-radius: 16px;
+      padding: 25px; margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      color: #2c3e50; margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+    }
+    .btn {
+      display: block; width: 100%; padding: 16px;
+      background: #e74c3c; color: white; border: none;
+      border-radius: 12px; font-size: 1.2rem; font-weight: bold;
+      cursor: pointer; transition: all 0.3s;
+      margin: 20px 0;
+    }
+    .btn:hover {
+      background: #c0392b; transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .qr-section {
+      display: none; text-align: center;
+      padding: 20px; background: #f8f9fa;
+      border-radius: 12px; margin-top: 20px;
+    }
+    .qr-img {
+      width: 220px; height: 220px;
+      background: white; padding: 10px;
+      border-radius: 10px; margin: 0 auto 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .qr-img img {
+      width: 100%; height: 100%; object-fit: contain;
+    }
+
+    .rekening {
+      list-style: none;
+    }
+    .rekening li {
+      padding: 12px 0; border-bottom: 1px dashed #eee;
+      display: flex; justify-content: space-between;
+    }
+    .rekening li:last-child { border: none; }
+    .bank { font-weight: bold; color: #2980b9; }
+    .nomor { font-family: 'Courier New', monospace; }
+
+    .footer {
+      text-align: center; padding: 25px 15px;
+      color: #7f8c8d; font-size: 0.95rem;
+      background: white; border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .footer a { color: #e74c3c; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .stats { gap: 10px; }
+      .stat-box { padding: 10px 15px; min-width: 120px; }
+      .stat-value { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+              <div class="qr-img">
+          <img src="https://a.top4top.io/p_3628i154l0.png" alt="QRIS Donasi">
+        </div>
+      <h1>Peduli Aceh & Sumatera</h1>
+      <p class="subtitle">Inisiatif Kemanusiaan oleh <strong>Farmasi 2025<br>Universitas Islam Madura</strong></p>
+      
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-value">Rp0</div>
+          <div class="stat-label">Terkumpul</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Donatur</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>❤️ Mari Bantu Saudara Kita</h2>
+      <p>Bencana alam & krisis kemanusiaan sedang terjadi di Aceh dan Sumatera. Mari ringankan beban mereka dengan donasi terbaikmu — sekecil apa pun sangat berarti.</p>
+      <button class="btn" onclick="showQR()">📱 Donasi via QRIS (DANA/OVO/GoPay/ShopeePay)</button>
+      
+      <div id="qr-section" class="qr-section">
+        <h3>Scan QR untuk Donasi Instan</h3>
+        <div class="qr-img">
+          <img src="https://i.top4top.io/p_3628zovi80.png" alt="QRIS Donasi">
+        </div>
+        <p><em>*Buka e-wallet → Pindai QR → Masukkan nominal → Bayar</em></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💳 Transfer Bank</h2>
+      <p>Donasi via transfer bank (atas nama panitia resmi):</p>
+      <ul class="rekening">
+        <li>
+          <span class="bank">🏦 BRI</span>
+          <span class="nomor">6465.0104.0033.532<br><small>A/n Ach Hedil Umam</small></span>
+        </li>
+        <li>
+          <span class="bank">🏦 BNI</span>
+          <span class="nomor">1967.5935.05<br><small>A/n Siti Nor Azlina</small></span>
+        </li>
+      </ul>
+      <p><strong>✅ Konfirmasi setelah transfer!</strong></p>
+    </div>
+
+    <div class="footer">
+      <p><strong>Penanggung Jawab:</strong><br>
+      Kirim Bukti Donasi Ke<br> <br>Syafiuddin<br>
+      📞 <a href="https://wa.me/6285933767056">+62 859-3376-7056</a></p>
+      <p style="margin-top:15px; font-size:0.9rem;">
+        🌐 Website ini dikelola oleh Mahasiswa Farmasi 2025 Universitas Islam Madura<br>
+        Universitas Islam Madura | #PeduliNegeri
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showQR() {
+      const qrSection = document.getElementById('qr-section');
+      qrSection.style.display = qrSection.style.display === 'block' ? 'none' : 'block';
+      
+      if (qrSection.style.display === 'block') {
+        qrSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+</body>
+</html>
